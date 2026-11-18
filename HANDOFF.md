@@ -81,7 +81,7 @@ Run `python3 ../build.py` first; it creates `tests/test.html` (the build with te
 
 ## Publishing (if the new session has the Artifact tool)
 
-Publish `index.html` content to the existing URL above with `files` for any new/changed images under `img/`. The published file has no doctype/head (the Artifact host adds them); `index.html` here is exactly that body-level content, so publish it as is.
+Publish `index.html` content to the existing URL above with `files` for any new/changed images under `img/`. `index.html` now starts with `<!DOCTYPE html>` and charset/viewport meta (since 2026-11-18), so it works on GitHub Pages and publishes to the Artifact host as is.
 
 ## Session 2026-11-17 changes
 
