@@ -1,0 +1,78 @@
+
+<a class="skip" href="#mainContent">Skip to main content</a>
+<nav class="rail" aria-label="Main">
+  <div class="logo"><span class="mark" id="railMark"></span>Everyday Safe</div>
+  <div id="railNav" style="display:grid;gap:4px"></div>
+</nav>
+
+<main class="main" id="mainContent" tabindex="-1">
+  <header class="top"><div class="top-in gut">
+    <div class="logo"><span class="mark" id="topMark"></span><span>Everyday <span class="rd">Safe</span></span></div>
+    <div class="topacts"><button type="button" class="hbtn" id="hCard"></button><button type="button" id="hMore" hidden></button></div>
+  </div></header>
+  <section class="tab gut" id="tab-home" aria-labelledby="homeH"><div id="homeBody" style="display:grid;gap:16px"></div></section>
+  <section class="tab gut" id="tab-learn" hidden aria-labelledby="pathH">
+    <div class="ph"><h1 id="pathH">Learn</h1><p class="muted">Five units that follow a workday at ESQ. Open any lesson, in any order. Only the final challenge waits until Units 1–4 are done.</p></div>
+    <div id="pathBody" style="display:grid;gap:14px"></div></section>
+  <section class="tab gut" id="tab-kr" hidden aria-labelledby="krH">
+    <div class="ph"><h1 id="krH">Keep Ready</h1><p class="muted">A 3-minute episode once a week keeps what you've learned fresh, and brings new situations from the question bank.</p></div>
+    <div id="krBody" style="display:grid;gap:16px"></div></section>
+  <section class="tab gut" id="tab-building" hidden aria-labelledby="bH">
+    <div class="ph"><h1 id="bH">The ESQ Building</h1><p class="muted">Each area lights up as you finish its unit and retain its questions.</p></div>
+    <div id="bBody" style="display:grid;gap:16px"></div></section>
+  <section class="tab gut" id="tab-more" hidden aria-labelledby="meH">
+    <div class="ph"><h1 id="meH">More</h1></div>
+    <div id="meBody" style="display:grid;gap:16px"></div></section>
+  <section class="tab gut" id="tab-card" hidden aria-labelledby="cardH">
+    <div class="ph"><h1 id="cardH">Safety Card</h1><p class="muted">What to do and who to call, in order of urgency.</p></div>
+    <div id="cardBody" style="display:grid;gap:16px"></div></section>
+</main>
+
+<nav class="bnav" id="bnav" aria-label="Main"></nav>
+
+<!-- player: lessons, Keep Ready episodes -->
+<div class="overlay" id="player" hidden role="dialog" aria-modal="true" aria-labelledby="pTitle">
+  <div class="otop gut"><div class="otop-in">
+    <button class="xbtn" id="pQuit" type="button"></button>
+    <span class="sr" id="pTitle">Lesson</span>
+    <div class="pbar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" id="pBarWrap"><i id="pBar"></i></div>
+    <span class="pcount" id="pCount"></span>
+  </div></div>
+  <div class="obody" id="pScroll" tabindex="0" aria-label="Lesson content"><div class="oin gut" id="pBody"></div></div>
+  <div class="ofoot gut"><div class="ofoot-in"><button class="btn sec" id="pPrev" type="button" hidden>Back</button><button class="btn" id="pMain" type="button" disabled>Check</button></div></div>
+</div>
+
+<!-- quarterly team challenge (facilitator / projection) -->
+<div class="overlay team" id="team" hidden role="dialog" aria-modal="true" aria-labelledby="tTitle">
+  <div class="otop gut"><div class="otop-in" style="max-width:1000px">
+    <button class="xbtn" id="tQuit" type="button"></button>
+    <span class="pcount" id="tTitle" style="flex:1">Team challenge</span>
+    <span class="pcount" id="tCount"></span>
+  </div></div>
+  <div class="obody" tabindex="0" aria-label="Challenge content"><div class="oin gut" id="tBody"></div></div>
+  <div class="ofoot gut"><div class="ofoot-in" style="max-width:1000px"><button class="btn sec" id="tPrev" type="button">Back</button><button class="btn" id="tMain" type="button">Next</button></div></div>
+</div>
+
+<!-- leads guide -->
+<div class="overlay" id="leads" hidden role="dialog" aria-modal="true" aria-labelledby="ldH">
+  <div class="otop gut"><div class="otop-in"><button class="xbtn" id="leadsX" type="button"></button><span class="pcount">For team leads</span></div></div>
+  <div class="obody" tabindex="0" aria-label="Leads guide"><div class="oin gut" id="leadsIn"></div></div>
+</div>
+
+<!-- onboarding -->
+<div class="overlay" id="onb" hidden role="dialog" aria-modal="true" aria-labelledby="onbH">
+  <div class="otop gut"><div class="otop-in"><button class="xbtn" id="onbBack" type="button" aria-label="Back"></button><div class="pbar"><i id="onbBar"></i></div></div></div>
+  <div class="obody" tabindex="0" aria-label="Welcome content"><div class="oin gut" id="onbBody"></div></div>
+  <div class="ofoot gut"><div class="ofoot-in" id="onbFoot"></div></div>
+</div>
+
+<div class="dlg" id="dlg" hidden role="alertdialog" aria-modal="true" aria-labelledby="dlgT" aria-describedby="dlgP">
+  <div class="dlg-in"><h2 id="dlgT"></h2><p id="dlgP" class="muted"></p><div class="dlg-acts"><button class="btn sec" id="dlgNo" type="button"></button><button class="btn" id="dlgYes" type="button"></button></div></div>
+</div>
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+ <marker id="ah-ok" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--green)"/></marker>
+ <marker id="ah-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--red)"/></marker>
+ <linearGradient id="skyg" x1="0" x2="1"><stop offset="0" stop-color="#F6E3B0"/><stop offset=".45" stop-color="#DCEBF3"/><stop offset="1" stop-color="#3A4A7A"/></linearGradient>
+</defs></svg>
